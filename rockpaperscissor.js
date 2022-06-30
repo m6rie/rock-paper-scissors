@@ -4,23 +4,27 @@ const winnerPick = {'Rock': 'Paper', 'Paper': 'Scissors', 'Scissors': 'Rock'};
 const computerSelection = computerPlay();
 const playerSelection = playerInput.value;
 const resetButton = document.querySelector('.resetButton');
-// let gameRound = 1;
-// let newGame;
+const result = document.querySelector('.result');
+const playerResult = document.querySelector('.playerResult');
+const computerResult = document.querySelector('.computerResult');
 
 let gamePlay = playerSubmit.addEventListener("click", playRound => {
   const playerSelection = playerInput.value[0].toUpperCase() + playerInput.value.slice(1).toLowerCase()
+  const option = ['Rock', 'Paper', 'Scissors']
   const computerR = computerSelection.reset;
   winnerPick;
 
-  if(playerSelection === computerSelection) {
-    console.log("It's a tie!");
+  if(!option.includes(playerSelection)) {
+    result.textContent = "Please enter a valid option"
+} else if(playerSelection === computerSelection) {
+    result.textContent = "It's a tie!";
 } else if(playerSelection === winnerPick[computerSelection]) {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+    result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
 } else {
-    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+    result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
 }
-  console.log(`You played: ${playerSelection}`);
-  console.log(`computer played: ${computerSelection}`);
+    // playerResult.textContent =`You played: ${playerSelection}`;
+    computerResult.textContent = `The computer played: ${computerSelection}`;
 });
 
 function computerPlay() {
@@ -33,14 +37,18 @@ function computerPlay() {
 resetButton.addEventListener("click", resetGame => {
   playerInput.value = '';
   console.log(playerInput.value);
+  result.textContent = '';
+  playerResult.textContent = '';
+  computerResult.textContent = '';
+
+  // computerSelection.disabled = true;
+  // console.log(computerSelection);
 
   // computerSelection.value = '';
   // const computerSelection = computerPlay();
   // const cumputerR = computerPlay.reset;
   // console.log(cumputerR);
   // console.log(computerSelection);
-
-
 });
 // CREATE A resetButton button and a resetGame function
 // the resetB will trigger an eventListener w/ function resetG
@@ -52,15 +60,3 @@ resetButton.addEventListener("click", resetGame => {
 //   }
 // }
 // console.log(game())
-
-// TRIALS
-  // winningMessage = (playerSelection, computerSelection) => `Congrats ${playerSelection} beats ${computerSelection}`
-  // losingMessage = (computerSelection, playerSelection) => `You lose ${computerSelection} beats ${playerSelection}`
-
-  // console.log('#playerSelection'.innerHTML)
-  // console.log('.playerChoice'.innerHTML)
-
-// CONSOLE.LOG THE RESULTS
-  // console.log(playRound(playerSelection, computerSelection));
-  // console.log(computerSelection);
-  // console.log(playerSelection);
