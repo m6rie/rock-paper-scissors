@@ -7,34 +7,24 @@ const playerSelection = playerInput.value;
 // let gameRound = 1;
 // let newGame;
 
-playerSubmit.addEventListener("click", () => {
+playerSubmit.addEventListener("click", playRound => {
   const playerSelection = playerInput.value;
+  winnerPick;
 
+  if(playerSelection === computerSelection) {
+    console.log("It's a tie!");
+} else if(playerSelection === winnerPick[computerSelection]) {
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+} else {
+    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+}
   console.log(`You played: ${playerSelection}`);
   console.log(`computer played: ${computerSelection}`);
-  console.log(playRound());
-  // computerPlay();
-  // console.log(playRound);
-  // console.log(playRound(playerSelection, computerSelection));
-
 });
 
 function computerPlay() {
   const picks = ["Rock", "Paper", "Scissors"];
   return picks[Math.floor(Math.random() * picks.length)];
-}
-
-function playRound(playerSelection, computerSelection) {
-  const winnerPick = {'Rock': 'Paper', 'Paper': 'Scissors', 'Scissors': 'Rock'};
-    if(playerSelection === computerSelection) {
-      return "It's a tie!";
-    } else if(playerSelection === winnerPick[computerSelection]) {
-      console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-    } else {
-      console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-    }
-  console.log(`You played: ${playerSelection}`);
-  // console.log(playRound);
 }
 
 
