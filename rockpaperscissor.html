@@ -12,31 +12,26 @@
 
   <body>
     <div class="container">
-      <div class="child-flex upper-part">
+      <div>
         <h1>Rock, paper, scissors</h1>
         <p>Rock crushes scissors, scissors cut paper, and paper covers rock. Let's play!</p>
       </div>
 
-        <div class="answer-block">
-          <p class="playerResult"></p>
-          <p class="computerResult"></p>
-          <p class="result"></p>
-        </div>
+      <div class="answer-block">
+        <!-- <p class="playerResult"></p> -->
+        <p id="computerResult"></p>
+        <p class="result"></p>
+      </div>
 
-        <div class="form child-flex">
-          <label for="player"></label>
-          <!-- <select name="playerSelect" id="playerSelect" class="playerSelection">
-            <option value="rock">rock</option>
-            <option value="paper">paper</option>
-            <option value="scissors">scissors</option>
-          </select> -->
-          <input type="text" name="playerInput" id="playerInput" placeholder="Rock, paper or scissors?">
-        </div>
+      <div class="form">
+        <label for="player"></label>
+        <input type="text" name="playerInput" id="playerInput" placeholder="Rock, paper or scissors?">
+      </div>
 
-        <div class="child-flex">
-          <input type="submit" value="Play" class="playerSubmit">
-          <button class="resetButton">Restart</button>
-        </div>
+      <div>
+        <input type="submit" value="Play" class="playerSubmit">
+        <button class="resetButton">Restart</button>
+      </div>
     </div>
     <div id="footer">
       <p><a href="https://ubiquitous-donut-11e.notion.site/Marie-Fran-oise-Etong-Etong-e5315e6c07c842bca9379c2e41f7d4e1" target="_blank">Portfolio</a></p>
