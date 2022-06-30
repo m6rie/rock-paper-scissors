@@ -3,12 +3,13 @@ const playerInput = document.querySelector("#playerInput");
 const winnerPick = {'Rock': 'Paper', 'Paper': 'Scissors', 'Scissors': 'Rock'};
 const computerSelection = computerPlay();
 const playerSelection = playerInput.value;
-
+const resetButton = document.querySelector('.resetButton');
 // let gameRound = 1;
 // let newGame;
 
-playerSubmit.addEventListener("click", playRound => {
-  const playerSelection = playerInput.value;
+let gamePlay = playerSubmit.addEventListener("click", playRound => {
+  const playerSelection = playerInput.value[0].toUpperCase() + playerInput.value.slice(1).toLowerCase()
+  const computerR = computerSelection.reset;
   winnerPick;
 
   if(playerSelection === computerSelection) {
@@ -23,27 +24,26 @@ playerSubmit.addEventListener("click", playRound => {
 });
 
 function computerPlay() {
+  // TRY ADDING A LOOP OF (let i = 0; i = 1; i++)
+  for (let i = 0; i = 1; i++){
   const picks = ["Rock", "Paper", "Scissors"];
   return picks[Math.floor(Math.random() * picks.length)];
-}
+}}
+
+resetButton.addEventListener("click", resetGame => {
+  playerInput.value = '';
+  console.log(playerInput.value);
+
+  // computerSelection.value = '';
+  // const computerSelection = computerPlay();
+  // const cumputerR = computerPlay.reset;
+  // console.log(cumputerR);
+  // console.log(computerSelection);
 
 
-// console.log(`computer played: ${computerPlay()}`);
-
-
-// function playerChoice(choice) {
-  //   const choices = ["rock", "paper", "scissors"];
-  // choices.forEach(caseSensitive);
-
-  // function caseSensitive(choice) {
-    // choice = playerInput.value;
-    // const mandem = choice.charAt(0).toUpperCase() + choice.slice(1).toLowerCase();
-    // console.log(choice)
-  // }
-
-  // const pick = "ROCK";
-// }
-
+});
+// CREATE A resetButton button and a resetGame function
+// the resetB will trigger an eventListener w/ function resetG
 
 // function game() {
   // gameRound = playRound += 1

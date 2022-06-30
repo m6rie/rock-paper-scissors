@@ -2,30 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissor</title>
   </head>
 
-  <body>
-    <h1>Rock, paper, scissors</h1>
-    <div>
+  <body class="container">
+    <div class="child-flex upper-part">
+      <h1>Rock, paper, scissors</h1>
       <p>Rock crushes scissors, scissors cut paper, and paper covers rock. Let's play!</p>
     </div>
-    <div class="form">
-      <label for="player">Select your pick:</label>
-      <!-- <select name="playerSelect" id="playerSelect" class="playerSelection">
-        <option value="rock">rock</option>
-        <option value="paper">paper</option>
-        <option value="scissors">scissors</option>
-      </select> -->
-      <input type="text" name="playerInput" id="playerInput">
-      <input type="submit" value="Play" class="playerSubmit">
-    </div>
-
-    <div>
+      <div class="form child-flex">
+        <label for="player"></label>
+        <!-- <select name="playerSelect" id="playerSelect" class="playerSelection">
+          <option value="rock">rock</option>
+          <option value="paper">paper</option>
+          <option value="scissors">scissors</option>
+        </select> -->
+        <input type="text" name="playerInput" id="playerInput" placeholder="Rock, paper or scissors?">
+      </div>
+      <div class="child-flex">
+        <input type="submit" value="Play" class="playerSubmit">
+        <button class="resetButton">Restart</button>
+      </div>
+    <!-- <div>
       <p class="playerSelection">You picked:</p>
       <p id="computerSelection">Your opponent picked:</p>
-    </div>
+    </div> -->
     <script src="rockpaperscissor.js"></script>
   </body>
 
