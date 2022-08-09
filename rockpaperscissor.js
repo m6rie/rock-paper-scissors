@@ -14,11 +14,21 @@ let computerCount = 0;
 let gameLength = 5;
 let gameCount = 0;
 
+// resetButton.addEventListener("click", function(e) {
+//   console.log("reset")
+//   resetGame()
+// });
+
+playerSubmit.addEventListener("click", function(event) {
+  console.log("play")
+  gamePlay()
+})
+
 function gamePlay() {
   const playerSelection = playerInput.value[0].toUpperCase() + playerInput.value.slice(1).toLowerCase();
   winnerPick;
-  userCount == 0;
-  computerCount == 0
+  userCount === 0;
+  computerCount === 0;
   let computerPlay = option[Math.floor(Math.random() * option.length)];
 
     if(userCount != 5 && computerCount != 5) {
@@ -52,22 +62,12 @@ function gamePlay() {
 }
 
 function resetGame() {
-  userCount == 0;
-  computerCount == 0;
+  // userCount == 0;
+  // computerCount == 0;
   // scores.innerHTML = `You: ${userCount} ----- Computer: ${computerCount}`
   playerInput.value = '';
   result.textContent = '';
   computerResult.textContent = '';
   // scores.innerHTML = ""
-
-}
-
-playerSubmit.addEventListener("click", function(event) {
-  console.log("play")
   gamePlay()
-})
-
-resetButton.addEventListener("click", function(e) {
-  console.log("reset")
-  resetGame()
-});
+}
