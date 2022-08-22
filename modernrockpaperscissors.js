@@ -26,29 +26,33 @@ for(let i = 0; i < buttons.length; i++) {
     // } else {
     //   computerResult.textContent = "✌️"
     // }
-
     // event.preventDefault()
 
-    function round() {
-      let computerPick = computerFunction()
+  // restart.addEventListener("click", round)
 
-      if (userScore <= 4 && computerScore <= 4) {
-        if(buttons[i].innerHTML === computerPick) {
-          result.innerHTML = `It's a tie. <br> You played ${buttons[i].innerHTML} the computer played ${computerPick}`
-          scores.innerHTML = `You: ${userScore} --- Computer: ${computerScore}`
-        } else if(buttons[i].innerHTML === winnerPick[computerPick]) {
-          result.innerHTML = `You won! <br> You played ${buttons[i].innerHTML} the computer played ${computerPick}`
-          userScore++
-          scores.innerHTML = `You: ${userScore} --- Computer: ${computerScore}`
-        } else {
-          result.innerHTML = `You lost. <br> You played ${buttons[i].innerHTML} the computer played ${computerPick}`
-          computerScore++
-          scores.innerHTML = `You: ${userScore} --- Computer: ${computerScore}`
-        }
-      } else if(userScore === 5 && computerScore <= 4) {
-        result.innerHTML = `Congratulations, you won! <!-- Would you like to play again? -->`
+  function round() {
+
+    let computerPick = computerFunction()
+
+    if (userScore < 5 && computerScore < 5) {
+      if(buttons[i].innerHTML === computerPick) {
+        result.innerHTML = `It's a tie. <br> You played ${buttons[i].innerHTML} the computer played ${computerPick}`
+        scores.innerHTML = `You: ${userScore} --- Computer: ${computerScore}`
+      } else if(buttons[i].innerHTML === winnerPick[computerPick]) {
+        result.innerHTML = `You won! <br> You played ${buttons[i].innerHTML} the computer played ${computerPick}`
+        userScore++
+        scores.innerHTML = `You: ${userScore} --- Computer: ${computerScore}`
       } else {
-        result.innerHTML = `Seems like you could not beat the machine. <!--  Would you like to play again?-->`
+        result.innerHTML = `You lost. <br> You played ${buttons[i].innerHTML} the computer played ${computerPick}`
+        computerScore++
+        scores.innerHTML = `You: ${userScore} --- Computer: ${computerScore}`
       }
+    } else if(userScore === 5 && computerScore <= 4) {
+      result.innerHTML = `Congratulations, you won! <!-- Would you like to play again? -->`
+      // restart.innerHTML = `<button>Restart</button>`
+    } else {
+      result.innerHTML = `Seems like you could not beat the machine. <!--  Would you like to play again?-->`
+      // restart.innerHTML = `<button>Restart</button>`
     }
+  }
 }
